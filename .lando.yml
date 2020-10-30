@@ -1,0 +1,9 @@
+name: makeusers
+recipe: lamp
+config:
+  webroot: public
+tooling:
+    require:
+        service: appserver
+        description: This command install the require packages from the user through lando into the container
+        cmd: /app/scripts/composerInternal.sh

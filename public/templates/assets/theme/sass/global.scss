@@ -1,0 +1,63 @@
+// The main file for all the styles
+
+// Fonts
+@import url("https://use.fontawesome.com/releases/v5.15.1/css/all.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto");
+@import '../sass/form.scss';
+
+// General styles
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #171c21;
+    .content {
+        min-height: calc(100vh - 59px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    h1 { 
+        font-weight: 800;
+        color: white;
+    }
+    .code {
+        padding: 0;
+        margin: 0;
+        font-size: 5rem;
+    }
+    .footer {
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: white;
+        }
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: #212a35;
+        border-radius: 20px 20px 0 0 ;
+        margin: 0 50px;
+        margin-top: 50px;
+        padding: 20px;
+    }
+    .notFound {
+        height: 65%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            background-color: white;
+            border-radius: 100%;
+            padding: 20px 45px;
+        }
+        * {
+            margin-bottom: 50px;
+        }
+    }
+}

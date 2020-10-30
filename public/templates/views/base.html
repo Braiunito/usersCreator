@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="templates/assets/theme/css/global.css">
+        {% block head %}
+            <title>{% block title %}{% endblock %}{{title}} | Users Creator</title>
+        {% endblock %}
+    </head>
+    <body>
+        <div class="content">
+        {% block content %}
+        {% endblock %}
+        </div>
+        <div id="footer">
+            {% block footer %}
+            <div class="footer">
+                <p>&copy; Copyright 2020 by <a href="https://braiunito.github.io/portfolio/" target="_blank">Braian Ariel Maciel</a>.</p>
+            </div>
+            {% endblock %}
+        </div>
+    </body>
+</html>
