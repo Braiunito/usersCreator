@@ -13,7 +13,6 @@ class App {
 
     function run() {
         session_start();
-        //$_SESSION['user'] = 'Mockup';
         $response = $this->router->register();
         echo $response;
     }
