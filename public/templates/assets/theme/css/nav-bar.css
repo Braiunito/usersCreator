@@ -1,0 +1,32 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\000033}}
+.nav-bar {
+  box-shadow: -4px 5px 12px 0px #0a0a0a;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: #2b2e2f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\000035}}
+.nav-bar .icon span {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\000038}}
+.nav-bar .icon img {
+  width: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000318}}
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000323}}
+.nav-bar .mainButton {
+  padding: 3px 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000326}}
+.nav-bar a,
+.nav-bar .mainButton {
+  font-size: 1.2rem;
+}

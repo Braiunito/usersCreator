@@ -29,7 +29,7 @@ class LoginController extends Controller {
                 if ($valid) {
                     $auth = $this->user->authUser($formData['email'], $formData['password']);
                     if ($auth) {
-                        $_SESSION['user'] = $this->user->getUser();
+                        $_SESSION['user'] = $this->user;
                         header('Location: /');
                         return false;
                     }
@@ -37,7 +37,7 @@ class LoginController extends Controller {
                 $msg = "Your email is invalid or its not registered yet.";
                 $this->loginMessage($msg);
             }
-            return $this->view->render($this->getParams());
+            header("Location: {$_SERVER['HTTP_REFERER']}");
         });
     }
     

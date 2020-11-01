@@ -1,4 +1,9 @@
 # Routes
+## Important notes:
+
+```To know how to use filter or set auth views, check the  controllers/pages/auth/home.php file```
+- The auth filter is a filter that is pre-called before each petition thats required you to be authenticated before to continue to the page
+
 ## To register a route follow the next example:
 
 

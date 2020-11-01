@@ -55,10 +55,12 @@ class User {
 class UserModel extends Model {
 
     private $user;
+    public $username;
 
     function __construct()  {
         parent::__construct(...func_get_args());
         $this->user = new User();
+        $this->username = '';
     }
 
     function getUser() {
@@ -67,9 +69,16 @@ class UserModel extends Model {
 
     function setUser(Array $user) {
         $this->user->setUserData($user);
+        $username = $this->getUser()['firstname'] . ' ' . $this->getUser()['lastname'];
+        $this->username = $username;
+    }
+
+    function getUsername() {
+        return $this->username;
     }
 
     /**
+     * Funciton called when you will to register a user.
      * This function returns True or False
      * If the user is registered succesfully returns True.
      */
@@ -80,7 +89,7 @@ class UserModel extends Model {
         $pass = $this->encryptPass($formData['password']);
         $columns = array('firstname', 'lastname', 'email', 'pass');
         $values = array($firstname, $lastname, $email, $pass);
-        $this->query->queryInsertRow($columns, $values);
+        $this->query->queryInsertRow('users', $columns, $values);
         $result = $this->query->fetchResult();
 
         $this->query->queryGetRow('users', 'email', $email);
@@ -88,15 +97,12 @@ class UserModel extends Model {
         $this->setUser($user);
         return $result;
     }
-
-    private function encryptPass($password) {
-            $opciones = [
-                'cost' => 10,
-            ];
-            $password = password_hash($password, PASSWORD_BCRYPT, $opciones);
-            return $password;
-    }
-
+    
+    /**
+     * Funciton called when you will to login as a user.
+     * This function returns True or False
+     * If the user is info to login is ok returns True.
+     */
     function authUser($email, $password) {
         $verify = false;
         $this->query->queryGetRow('users', 'email', $email);
@@ -109,6 +115,14 @@ class UserModel extends Model {
             }
         }
         return $verify;
+    }
+
+    private function encryptPass($password) {
+            $opciones = [
+                'cost' => 10,
+            ];
+            $password = password_hash($password, PASSWORD_BCRYPT, $opciones);
+            return $password;
     }
 
     function isRegistered($email) {
@@ -135,6 +149,24 @@ class UserModel extends Model {
         $email = $formData['email'];
         $valid = (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $email)) ? false : true;
         return $valid;
+    }
+
+    function deleteUser($id) {
+        $this->query->queryDeleteRow('users', 'id', $id);
+        $result = $this->query->fetchResult();
+        return $result;
+    }
+
+    function getOneUserByEmail($email) {
+        $this->query->queryGetRow('users', 'email', $email);
+        $user = $this->query->fetchResult();
+        return $users;
+    }
+
+    function getOneUserById($id) {
+        $this->query->queryGetRow('users', 'id', $id);
+        $user = $this->query->fetchResult();
+        return $user;
     }
 
     function getAllUsers() {

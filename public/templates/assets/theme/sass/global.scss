@@ -4,6 +4,8 @@
 @import url("https://use.fontawesome.com/releases/v5.15.1/css/all.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto");
 @import '../sass/form.scss';
+@import '../sass/nav-bar.scss';
+@import '../sass/manage.scss';
 
 // General styles
 body {
@@ -15,6 +17,7 @@ body {
     .content {
         min-height: calc(100vh - 59px);
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
@@ -59,5 +62,15 @@ body {
         * {
             margin-bottom: 50px;
         }
+    }
+    .mainButton {
+        margin-top: 40px;
+        padding: 5px 40px;
+        background-color: #c13f35;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+        border: 3px solid #c13f35;
+        border-radius: 10px;
     }
 }

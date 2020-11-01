@@ -10,11 +10,6 @@ class HomeController extends Controller {
 
     // @Overrided function from Controller.
     function preRender($router) {
-        $params = $this->getParams();
-        if (isset($_SESSION['user'])) {
-            $params['name'] = $_SESSION['user']['firstname'] . ' ' . $_SESSION['user']['lastname'];
-            $this->setParams($params);
-        }
         $router->getCollector()->group(['before' => 'auth'], function($collector) {
             $router = $GLOBALS['router'];
             $router->getCollector()->{$this->method}($this->route, function () {

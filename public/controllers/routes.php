@@ -13,10 +13,16 @@ $router = new Router(null, null, null, '/home');
 // Initializing Routes
 $routes = Array(
     'Home' => new HomeController('GET', '/home', 'auth/home', 'Home'),
+    
+    'Manage' => new ManageController('GET', '/home/manage', 'auth/manage', 'Manage'),
+    'Edit' => new EditController('GET', '/home/manage/edit', 'auth/edit', 'Edit'),
+    'Delete' => new DeleteController('POST', '/delete/user'),
+
     'Access' => new AccessController('GET', '/user', 'access', 'User'),
-    'Register' => new RegisterController('POST', '/register', 'access', 'register'),
-    'Login' => new LoginController('POST', '/login', 'access', 'Login'),
-    'Logout' => new LogoutController('GET', '/logout', 'logout', 'Logout'),
+    'Register' => new RegisterController('POST', '/register'),
+    'Login' => new LoginController('POST', '/login'),
+    'Logout' => new LogoutController('GET', '/logout'),
+    
     '500' => new GenericController(null, '/500', 'errors/500', 'Internal Server Error', array('msg' => 'Internal Server error.', 'code' => '500')),
     '404' => new NotFoundController(null, '/404', 'errors/404', 'Page Not Found' ,array('msg' => 'The page that you are requseting does not exist.', 'code' => '404')),
 );

@@ -47,7 +47,7 @@ class RegisterController extends Controller {
                 if ($valid) {
                     $result = $this->user->registerUser($formData);
                     if ($result) {
-                        $_SESSION['user'] = $this->user->getUser();
+                        $_SESSION['user'] = $this->user;
                     }
                     $this->msg = ($result) ? "Congratulations you are registered!" : "Sorry something wents wrong in the registration.";
                     $this->loginMessage();
@@ -55,7 +55,7 @@ class RegisterController extends Controller {
                     $this->loginMessage();
                 }
             }
-            return $this->view->render($this->getParams());
+            header("Location: {$_SERVER['HTTP_REFERER']}");
         });
     }
     

@@ -1,6 +1,4 @@
-$FormWidth: 30vw;
-$FormMinWidth: 400px;
-$FormMaxWidth: 450px;
+@import '../sass/vars.scss';
 
 .accessForm {
     display: flex;
@@ -24,10 +22,10 @@ $FormMaxWidth: 450px;
             min-width: $FormMinWidth;
             max-width: $FormMaxWidth;
             h4 {
-                color: #ce125a;
+                color: $custRose;
                 font-size: 30px;
                 font-weight: bold;
-                background-color: #ce121200;
+                background-color: $mainDarkColor;
                 border: 0px solid white;
                 text-align: center;
                 width: 100%;
@@ -38,10 +36,22 @@ $FormMaxWidth: 450px;
                     background-color: white;
                 }
             margin: 0;
-            color: #ce125a;
+            color: $custRose;
             display: flex;
             justify-content: space-between;
             font-size: 2rem;
+        }
+        #register:hover {
+                color: white;
+        }
+        #signin:hover {
+            color: white;
+        }
+        #register.selectedOption:hover {
+            color: $custBlue;
+        }
+        #signin.selectedOption:hover {
+            color: $custBlue;
         }
         .formContent {
             border: 5px solid white;
@@ -68,16 +78,6 @@ $FormMaxWidth: 450px;
                 width: 80%;
                 height: 35px;
                 border: 2px solid lightgray;
-                border-radius: 10px;
-            }
-            input[type=submit] {
-                margin-top: 40px;
-                padding: 5px 40px;
-                background-color: #c13f35;
-                color: white;
-                font-weight: bold;
-                font-size: 1.5rem;
-                border: 3px solid #c13f35;
                 border-radius: 10px;
             }
         }

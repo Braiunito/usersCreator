@@ -31,7 +31,7 @@ use app\libs\database\database\Connect;
             return false;
         }
 
-        private function queryInsert($sql) {
+        private function queryAlter($sql) {
             $connection = Connect::connection();
             try {
                 $query = $connection->query($sql); 
@@ -48,15 +48,21 @@ use app\libs\database\database\Connect;
             return $this->result;
         }
 
-        function queryInsertRow($columns, $values) {
+        function queryInsertRow($table, $columns, $values) {
             $cols = implode(',', $columns);
             $vals = array();
             foreach ($values as $key => $value) {
                 array_push($vals, "'{$value}'");
             }
             $vals = implode(', ', $vals);
-            $sql = "INSERT INTO users ({$cols}) VALUES ({$vals});";
-            $result = $this->queryInsert($sql);
+            $sql = "INSERT INTO {$table} ({$cols}) VALUES ({$vals});";
+            $result = $this->queryAlter($sql);
+            $this->result = $result;
+        }
+
+        function queryDeleteRow($table, $column, $value) {
+            $sql = "DELETE FROM {$table} WHERE {$column}='{$value}';";
+            $result = $this->queryAlter($sql);
             $this->result = $result;
         }
 

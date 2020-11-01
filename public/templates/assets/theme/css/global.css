@@ -1,6 +1,6 @@
 @import url("https://use.fontawesome.com/releases/v5.15.1/css/all.css");
 @import url("https://fonts.googleapis.com/css2?family=Roboto");
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\000033}}
 .accessForm {
   display: flex;
   flex-direction: column;
@@ -8,22 +8,22 @@
   min-width: 400px;
   max-width: 450px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\000039}}
 .accessForm .alertMsg {
   text-align: center;
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000313}}
 .accessForm #mainForm {
   padding: 0;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000316}}
 .accessForm #mainForm .noSubmitButton {
   user-select: none;
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000320}}
 .accessForm #mainForm .title {
   width: 30vw;
   min-width: 400px;
@@ -34,7 +34,7 @@
   justify-content: space-between;
   font-size: 2rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000326}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000324}}
 .accessForm #mainForm .title h4 {
   color: #ce125a;
   font-size: 30px;
@@ -46,11 +46,27 @@
   padding: 15px 30px;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000335}}
 .accessForm #mainForm .title .selectedOption {
   background-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000344}}
+.accessForm #mainForm #register:hover {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000347}}
+.accessForm #mainForm #signin:hover {
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000350}}
+.accessForm #mainForm #register.selectedOption:hover {
+  color: #3596dc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000353}}
+.accessForm #mainForm #signin.selectedOption:hover {
+  color: #3596dc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000356}}
 .accessForm #mainForm .formContent {
   border: 5px solid white;
   min-height: 350px;
@@ -61,18 +77,18 @@
   justify-content: space-between;
   background-color: #b5bcec40;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000365}}
 .accessForm #mainForm .formContent p {
   color: white;
   font-weight: white;
   text-align: left;
   width: 80%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000370}}
 .accessForm #mainForm .formContent p strong {
   color: #c13f35;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000374}}
 .accessForm #mainForm .formContent input.name,
 .accessForm #mainForm .formContent input.pass {
   padding-left: 8px;
@@ -82,19 +98,41 @@
   border: 2px solid lightgray;
   border-radius: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000373}}
-.accessForm #mainForm .formContent input[type=submit] {
-  margin-top: 40px;
-  padding: 5px 40px;
-  background-color: #c13f35;
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\000033}}
+.nav-bar {
+  box-shadow: -4px 5px 12px 0px #0a0a0a;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  background-color: #2b2e2f;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\000035}}
+.nav-bar .icon span {
   color: white;
-  font-weight: bold;
-  font-size: 1.5rem;
-  border: 3px solid #c13f35;
-  border-radius: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\000038}}
+.nav-bar .icon img {
+  width: 40px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000318}}
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000323}}
+.nav-bar .mainButton {
+  padding: 3px 15px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000326}}
+.nav-bar a,
+.nav-bar .mainButton {
+  font-size: 1.2rem;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000311}}
 body {
   min-height: 100vh;
   margin: 0;
@@ -102,25 +140,26 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #171c21;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000317}}
 body .content {
   min-height: calc(100vh - 59px);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000324}}
 body h1 {
   font-weight: 800;
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000328}}
 body .code {
   padding: 0;
   margin: 0;
   font-size: 5rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000333}}
 body .footer {
   bottom: 0;
   display: flex;
@@ -133,29 +172,40 @@ body .footer {
   margin-top: 50px;
   padding: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000334}}
 body .footer p {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000338}}
 body .footer a {
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000352}}
 body .notFound {
   height: 65%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000357}}
 body .notFound img {
   background-color: white;
   border-radius: 100%;
   padding: 20px 45px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000359}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000362}}
 body .notFound * {
   margin-bottom: 50px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000366}}
+body .mainButton {
+  margin-top: 40px;
+  padding: 5px 40px;
+  background-color: #c13f35;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: 3px solid #c13f35;
+  border-radius: 10px;
 }

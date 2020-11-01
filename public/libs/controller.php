@@ -34,6 +34,12 @@ use app\libs\router\Router;
          * preRender function
          */
         function process($router) {
+            if (isset($_SESSION['user'])) {
+                $user = $_SESSION['user'];
+                $params = $this->getParams();
+                $params['name'] = $user->getUsername();
+                $this->setParams($params);
+            }
             $this->view->setTwig($router->getTwig());
             $this->preRender($router);
         }
