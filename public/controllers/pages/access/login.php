@@ -35,6 +35,7 @@ class LoginController extends Controller {
                     }
                 }
                 $msg = "Your email is invalid or its not registered yet.";
+                $msg = array('msg' => $msg, 'type' => 'warning');
                 $this->loginMessage($msg);
             }
             header("Location: {$_SERVER['HTTP_REFERER']}");

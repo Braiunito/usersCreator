@@ -7,11 +7,13 @@ class RegisterController extends Controller {
 
     private $user;
     private $msg;
+    private $type;
 
     function __construct() {
         parent::__construct(...func_get_args());
         $this->user = new UserModel();
         $this->msg = null;
+        $this->type = 'warning';
     }
 
     private function validateRegistrationForm($formData, $msg = null) {
@@ -29,7 +31,7 @@ class RegisterController extends Controller {
     }
 
     private function loginMessage() {
-        $_SESSION['loginMsg'] = $this->msg;
+        $_SESSION['loginMsg'] = array('msg' => $this->msg, 'type' => $this->type);
         header('Location: /user');
         return false;
     }
@@ -49,7 +51,8 @@ class RegisterController extends Controller {
                     if ($result) {
                         $_SESSION['user'] = $this->user;
                     }
-                    $this->msg = ($result) ? "Congratulations you are registered!" : "Sorry something wents wrong in the registration.";
+                    $this->msg = ($result) ? "Congratulations you are registered!" : "Sorry, something wents wrong in the registration.";
+                    $this->type = ($result) ? "success" : "danger";
                     $this->loginMessage();
                 } else {
                     $this->loginMessage();
