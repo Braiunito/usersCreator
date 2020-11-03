@@ -8,12 +8,16 @@ class RegisterController extends Controller {
     private $user;
     private $msg;
     private $type;
+    private $byModal;
+    private $success;
 
     function __construct() {
         parent::__construct(...func_get_args());
         $this->user = new UserModel();
         $this->msg = null;
         $this->type = 'warning';
+        $this->byModal = false;
+        $this->success = false;
     }
 
     private function validateRegistrationForm($formData, $msg = null) {
@@ -31,9 +35,13 @@ class RegisterController extends Controller {
     }
 
     private function loginMessage() {
-        $_SESSION['loginMsg'] = array('msg' => $this->msg, 'type' => $this->type);
-        header('Location: /user');
-        return false;
+        if (!$this->byModal) {
+            $_SESSION['loginMsg'] = array('msg' => $this->msg, 'type' => $this->type);
+            header('Location: /user');
+        } else {
+            echo json_encode(array('success' => $this->success, 'msg' => $this->msg));
+            return false;
+        }
     }
 
 
@@ -41,11 +49,12 @@ class RegisterController extends Controller {
     function preRender($router) {
         $router->getCollector()->{$this->method}($this->route, function () {
             if (isset($_POST)) {
+                $this->byModal = isset($_POST['bymodal']) ? $_POST['bymodal'] : null;
                 $formData = array(
                     'firstname' => isset($_POST['firstname']) ? $_POST['firstname'] : null,
                     'lastname' => isset($_POST['lastname']) ? $_POST['lastname'] : null,
                     'email' => isset($_POST['email']) ? $_POST['email'] : null,
-                    'password' => isset($_POST['password']) ? $_POST['password'] : null
+                    'password' => isset($_POST['pass']) ? $_POST['pass'] : null
                 );
                 $valid = $this->validateRegistrationForm($formData, $this->msg);
                 if ($valid) {
@@ -56,10 +65,14 @@ class RegisterController extends Controller {
                     } */
                     $this->msg = ($result) ? "Congratulations you are registered!" : "Sorry, something wents wrong in the registration.";
                     $this->type = ($result) ? "success" : "danger";
+                    $this->success = ($result) ? true : false;
                     $this->loginMessage();
                 } else {
                     $this->loginMessage();
                 }
+            }
+            if ($this->byModal) {
+                return false;
             }
             header("Location: {$_SERVER['HTTP_REFERER']}");
         });

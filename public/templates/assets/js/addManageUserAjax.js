@@ -1,6 +1,6 @@
 import { hideMessage, fadeMsg, hide, danger, success } from './commonFunctions.js';
 
-export function setEditManager() {
+document.addEventListener("DOMContentLoaded", ()=>{
         var firstname = "";
         var lastname = "";
         var email = "";
@@ -10,8 +10,8 @@ export function setEditManager() {
         var success = "alert alert-success";
         var hide = "d-none";
 
-        var modal = document.getElementById('editModal');
-        var modalBtn = modal.getElementsByClassName("user-confirm-edit")[0];
+        var modal = document.getElementById('addModal');
+        var modalBtn = modal.getElementsByClassName("user-confirm-add")[0];
         var modalClose = modal.getElementsByClassName("close")[0]
 
         modalBtn.addEventListener("click", ()=>{
@@ -23,19 +23,10 @@ export function setEditManager() {
             modalClose.click();
         });
 
-        var els = document.getElementsByClassName('user-manage-row');
-        Array.prototype.forEach.call(els, e => {
-            let id = e.dataset.id;
-            e.getElementsByClassName('edit-button')[0].addEventListener("click", ()=> {
-                modalBtn.dataset.id = id;
-            });
-        });
-
 
         function ajaxUpdating() {
             let msg = document.getElementById('manageMsg');
-            let route = '/home/manage/edit/user';
-            let id = modalBtn.dataset.id;
+            let route = '/register';
 
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
@@ -43,20 +34,23 @@ export function setEditManager() {
                     let response = JSON.parse(this.responseText);
                     let result = response['success'];
                     if (result) {
-                        updateUser(id, response);
-                        msg.innerHTML = "User updated succesfully!"; 
+                        //updateUser(id, response);
+                        msg.innerHTML = "User added succesfully!"; 
                         msg.className = success;
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1000);
                     } else {
                         if (response['redirect']) {
                             window.location.href = response['redirect'];
                         }
-                        msg.innerHTML = "Error, user couldn't be updated. Might be an invalid email."; 
+                        msg.innerHTML = response["msg"]; 
                         msg.className = danger;
                     }
                     hideMessage(2000, msg);
                 }
             };
-            let myData = new Array('id='+id, 'firstname='+firstname, 'lastname='+lastname, 'email='+email, 'pass='+pass);
+            let myData = new Array('firstname='+firstname, 'lastname='+lastname, 'email='+email, 'pass='+pass, 'bymodal='+true);
             let url = myData.join('&');
             xhttp.open('POST', route, false);
             xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -75,4 +69,4 @@ export function setEditManager() {
             modal.getElementsByClassName("form-email")[0].value = "";
             modal.getElementsByClassName("form-pass")[0].value = "";
         }
-}
+});
