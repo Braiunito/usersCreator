@@ -19,11 +19,6 @@
   margin: 0;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000316}}
-.accessForm #mainForm .noSubmitButton {
-  user-select: none;
-  cursor: pointer;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000320}}
 .accessForm #mainForm .title {
   width: 30vw;
   min-width: 400px;
@@ -34,7 +29,7 @@
   justify-content: space-between;
   font-size: 2rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000324}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000320}}
 .accessForm #mainForm .title h4 {
   color: #ce125a;
   font-size: 30px;
@@ -46,27 +41,27 @@
   padding: 15px 30px;
   margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000331}}
 .accessForm #mainForm .title .selectedOption {
   background-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000344}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000340}}
 .accessForm #mainForm #register:hover {
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000343}}
 .accessForm #mainForm #signin:hover {
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000346}}
 .accessForm #mainForm #register.selectedOption:hover {
   color: #3596dc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000349}}
 .accessForm #mainForm #signin.selectedOption:hover {
   color: #3596dc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000352}}
 .accessForm #mainForm .formContent {
   border: 5px solid white;
   min-height: 350px;
@@ -77,18 +72,18 @@
   justify-content: space-between;
   background-color: #b5bcec40;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000361}}
 .accessForm #mainForm .formContent p {
   color: white;
   font-weight: white;
   text-align: left;
   width: 80%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000366}}
 .accessForm #mainForm .formContent p strong {
   color: #c13f35;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000370}}
 .accessForm #mainForm .formContent input.name,
 .accessForm #mainForm .formContent input.pass {
   padding-left: 8px;
@@ -99,8 +94,8 @@
   border-radius: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000388}}
-#editModal .modal-content {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000384}}
+.modal.dark .modal-content {
   background-color: #343a40;
   color: white;
 }
@@ -194,6 +189,10 @@
 .usersTable .table td, .usersTable .table th {
   vertical-align: inherit !important;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/manage\.scss}line{font-family:\000035}}
+.usersTable .inactive {
+  color: #007bff !important;
+}
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000311}}
 body {
@@ -271,6 +270,11 @@ body .mainButton {
   font-size: 1.5rem;
   border: 3px solid #c13f35;
   border-radius: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000375}}
+body .noSubmitButton {
+  user-select: none;
+  cursor: pointer;
 }
 
 @keyframes linkIn {

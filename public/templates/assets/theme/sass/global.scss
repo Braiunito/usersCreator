@@ -72,6 +72,10 @@ body {
         border: 3px solid #c13f35;
         border-radius: 10px;
     }
+    .noSubmitButton {
+        user-select: none;
+        cursor: pointer;
+    }
 }
 
 @keyframes linkIn {

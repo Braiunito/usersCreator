@@ -13,10 +13,6 @@
     #mainForm {
         padding: 0;
         margin: 0;
-        .noSubmitButton {
-            user-select: none;
-            cursor: pointer;
-        }
         .title {
             width: $FormWidth;
             min-width: $FormMinWidth;
@@ -84,7 +80,7 @@
     }
 }
 
-#editModal {
+.modal.dark {
     .modal-content {
         background-color: #343a40;
         color: white;
