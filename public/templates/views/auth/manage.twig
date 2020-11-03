@@ -4,6 +4,7 @@
 <script type="module" src="/templates/assets/js/commonFunctions.js"></script>
 <script type="module" src="/templates/assets/js/deleteManageUserAjax.js"></script>
 <script type="module" src="/templates/assets/js/editManageUserAjax.js"></script>
+<script type="module" src="/templates/assets/js/pagerManageUserAjax.js"></script>
 {% endblock %}
 
 
@@ -113,15 +114,20 @@
         </tbody>
     </table>
     <div class="pager d-flex justify-content-center align-items-center" style="color: white;">
-        {# <div class="btn btn-danger prev mr-3">Prev</div>
-            {% for i in 0..(pages.amount) %}
-                {% if pages.current == i %}
-                <span class="page pl-1 pr-1" style="color: green; cursor: pointer;" data-page={{i}}>{{i}}</span>
-                {% else %}
-                <span class="page pl-1 pr-1" style="cursor: pointer;" data-page={{i}}>{{i}}</span>
-                {% endif %}
-            {% endfor %}
-        <div class="btn btn-danger next ml-3">Next</div> #}
+    
+    <nav aria-label="...">
+      <ul class="pagination">
+        {% for i in 0..(counters.amount) %}
+          {% if counters.current == i %}
+            <li class="page-item active"><a class="page-link" href="?page={{i}}">{{i}} <span class="sr-only">(current)</span></a></li>
+          {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+
+
     </div>
 </div>
 {% endblock %}

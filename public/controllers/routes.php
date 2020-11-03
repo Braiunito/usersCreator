@@ -12,12 +12,10 @@ $router = new Router(null, null, null, '/home');
 
 // Initializing Routes
 $routes = Array(
+    'Manage' => new ManageController('GET', '/home/manage/{id}?', 'auth/manage', 'Manage'),
     'Home' => new HomeController('GET', '/home', 'auth/home', 'Home'),
     
 
-    
-    'Manage' => new ManageController('GET', '/home/manage', 'auth/manage', 'Manage'),
-    //'ManagePager' => new ManagePagerController('POST', '/home/manage/pager'),
     'Edit' => new EditController('POST', '/home/manage/edit/user', 'auth/edit', 'Edit'),
     'Delete' => new DeleteController('POST', '/home/manage/delete/user'),
 

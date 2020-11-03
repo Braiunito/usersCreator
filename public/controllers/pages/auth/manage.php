@@ -10,29 +10,29 @@ class ManageController extends Controller {
         parent::__construct(...func_get_args());
     }
 
-    function paginateUsers(Array $users, int $page) {
+    function paginateUsers(Array $users, int $current) {
         $pagination = $this->pagination;
         $bounded = array();
-        for ($i = ($page * $pagination); $i < (($page+1) * $pagination); $i++) { 
+        for ($i = ($current * $pagination); $i < (($current+1) * $pagination); $i++) { 
             if (isset($users[$i])) {
                 array_push($bounded, $users[$i]);
             } else {
                 break;  
             }
         }
-        $pages = ceil( count($users) / ($pagination) ) - 1;
-        $data = array('bounded' => $bounded, 'pages' => $pages);
+        $counters = ceil( count($users) / ($pagination) ) - 1;
+        $data = array('bounded' => $bounded, 'counters' => $counters);
         return $data;
     }
 
-    function setUserInPages($page) {
+    function setUserInCounters($current) {
         $user = $_SESSION['user'];
         $users = $user->getAllUsers();
         $params = $this->getParams();
-        $data = $this->paginateUsers($users, $page);
+        $data = $this->paginateUsers($users, $current);
         $params['users'] = $data['bounded'];
-        $params['pages']['amount'] = $data['pages'];
-        $params['pages']['current'] = $page;
+        $params['counters']['amount'] = $data['counters'];
+        $params['counters']['current'] = $current;
         $this->setParams($params);
         unset($user);
     }
@@ -42,14 +42,15 @@ class ManageController extends Controller {
     function preRender($router) {
         $router->getCollector()->group(['before' => 'auth'], function($collector) {
             $router = $GLOBALS['router'];
-            $router->getCollector()->{$this->method}($this->route, function ($id = null) {
+            $router->getCollector()->{$this->method}($this->route, function ($page = null) {
                 if (isset($_SESSION['user'])) {
-                    $user = $_SESSION['user'];
-                    $params = $this->getParams();
-                    $users = $user->getAllUsers();
-                    $params['users'] = $users;
-                    $this->setParams($params);
-                    unset($user);
+                    if (isset($_GET['page'])) {
+                        $page = $_GET['page'];
+                        $this->setUserInCounters($page);
+                    } else {
+                        $page = 0;
+                        $this->setUserInCounters($page);
+                    }
                 }
                 $_SESSION['loginMsg'] = null;
                 return $this->view->render($this->getParams());

@@ -72,14 +72,6 @@ body {
         border: 3px solid #c13f35;
         border-radius: 10px;
     }
-    a {
-        animation: linkIn 0.5s forwards;
-    }
-    a:hover {
-        color: $custBlue !important;
-        animation: linkOut 0.5s forwards;
-    }
-    
 }
 
 @keyframes linkIn {

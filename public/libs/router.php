@@ -35,14 +35,14 @@ use \Twig\Environment;
         }
 
         private function validate($url) {
-            $exist = false;
+            $exist = true;
             foreach ($this->getCanonicals() as $key => $value) {
                 if ($url == $value) {
                     $exist = true;
                 }
             }
+            //die(var_dump($this->getCanonicals(), $exist));
             $url = ($exist == true) ? $url : '/404';
-
             if ($_SERVER['REQUEST_URI'] == '/') {
                 header('Location: ' . $this->entryPoint);
                 return false;
@@ -91,7 +91,14 @@ use \Twig\Environment;
 
         function setCanonicals() {
             foreach ($this->getRoutes() as $key => $value) {
-                array_push($this->canonicals, $this->getRoutes()[$key]->route);
+                $str = $this->getRoutes()[$key]->route;
+                $str2 = explode('{', $str);
+                if (isset($str2[1])) {
+                    $str2 = substr($str2[0], 0, -1);
+                    array_push($this->canonicals, $str2);
+                } else {
+                    array_push($this->canonicals, $this->getRoutes()[$key]->route);
+                }
             }
         }
 

@@ -53,12 +53,21 @@
   color: white !important;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000350}}
+.navbar a {
+  animation: linkIn 0.5s forwards;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000353}}
+.navbar a:hover {
+  color: #3596dc !important;
+  animation: linkOut 0.5s forwards;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000357}}
 .navbar .navbar-brand {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000362}}
 .navbar .navbar-collapse.collapse.show,
 .navbar .navbar-collapse.collapsing {
   background-color: #2b2e2f;
@@ -67,7 +76,7 @@
   margin-left: -16px;
   margin-right: -16px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000364}}
 .navbar .navbar-collapse.collapse.show .mainButton,
 .navbar .navbar-collapse.collapsing .mainButton {
   margin-left: 0px;

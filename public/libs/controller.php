@@ -16,7 +16,7 @@ use app\libs\router\Router;
         */
         function __construct(String $method = null, String $route = null, String $page = null, String $title = null, Array $data = null) {
             $this->method = !isset($method) ? 'any' : $method;
-            $this->route = !isset($route) ? '/404' : $route;
+            $this->route = strval(!isset($route) ? '/404' : $route);
             $this->page = !isset($page) ? '404' : $page;
             $this->data = !isset($data) ? '' : $data;
             $this->title = !isset($title) ? $page : $title;

@@ -47,6 +47,13 @@
     .mainButton:hover {
         color: white !important;
     }
+    a {
+        animation: linkIn 0.5s forwards;
+    }
+    a:hover {
+        color: $custBlue !important;
+        animation: linkOut 0.5s forwards;
+    }
     .navbar-brand {
         display: flex;
         justify-content: flex-start;
