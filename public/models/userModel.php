@@ -185,6 +185,7 @@ class UserModel extends Model {
         return $result;
     }
 
+    // ToDo: Update reg_date in each update call or create update column.
     function updateUserById($id, $data) {
         $result = false;
         if (!empty($data['email'])) {
@@ -196,6 +197,9 @@ class UserModel extends Model {
             $result = true;
         }
         if ($result === true) {
+            if ($data['pass']) {
+                $data['pass'] = $this->encryptPass($data['pass']);
+            }
             if ($result) {
                 $update = array();
                 foreach ($data as $key => $value) {
