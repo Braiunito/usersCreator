@@ -63,6 +63,21 @@ class UserModel extends Model {
         $this->username = '';
     }
 
+    // Extend this function to a class and create class Schema to persist data structure.
+    function createUserTable() {
+        $sql = "CREATE TABLE users (
+                id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                firstname VARCHAR(30) NOT NULL,
+                lastname VARCHAR(30) NOT NULL,
+                pass varchar(128) NOT NULL,
+                email VARCHAR(50),
+                reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+                )";
+        $result = $this->query->createTable($sql);
+        $result = $this->query->fetchResult();
+        return $result;
+    }
+
     function getUser() {
         return $this->user->getUserData();
     }
@@ -76,6 +91,12 @@ class UserModel extends Model {
     function getUsername() {
         return $this->username;
     }
+
+    function checkUserTable() {
+        $this->query->queryCheckTable('users');
+        $result = $this->query->fetchResult();
+        return $result;
+        }
 
     /**
      * Funciton called when you will to register a user.
@@ -139,11 +160,13 @@ class UserModel extends Model {
         return $valid;
     }
 
-    function validateForm($formData) {
-        foreach ($formData as $key => $value) {
-            if (empty($value)) {
-                $msg = "Sorry, field {$key} couldnt be empty";
-                return $msg;
+    function validateForm($formData, $beEmpty = false) {
+        if (!$beEmpty) {
+            foreach ($formData as $key => $value) {
+                if (empty($value)) {
+                    $msg = "Sorry, field {$key} couldnt be empty";
+                    return $msg;
+                }
             }
         }
         $email = $formData['email'];
@@ -151,9 +174,40 @@ class UserModel extends Model {
         return $valid;
     }
 
-    function deleteUser($id) {
-        $this->query->queryDeleteRow('users', 'id', $id);
-        $result = $this->query->fetchResult();
+    function deleteUserById($id) {
+        $user = $this->getUserById($id);
+        if ($user) {
+            $this->query->queryDeleteRow('users', 'id', $id);
+            $result = $this->query->fetchResult();
+        } else {
+            return false;
+        }
+        return $result;
+    }
+
+    function updateUserById($id, $data) {
+        $result = false;
+        if (!empty($data['email'])) {
+            $result = $this->validateForm($data, true);
+            if ($result === true) {
+                $result = $this->isRegistered($data['email']);
+            }
+        } else {
+            $result = true;
+        }
+        if ($result === true) {
+            if ($result) {
+                $update = array();
+                foreach ($data as $key => $value) {
+                    if (!empty($value)) {
+                        $field = array($key => $value);
+                        $update = array_merge($update, $field);
+                    }
+                }
+                $this->query->queryUpdateRow('users', $update, 'id', $id);
+                $result = $this->query->fetchResult();
+            }
+        }
         return $result;
     }
 
@@ -163,7 +217,7 @@ class UserModel extends Model {
         return $users;
     }
 
-    function getOneUserById($id) {
+    function getUserById($id) {
         $this->query->queryGetRow('users', 'id', $id);
         $user = $this->query->fetchResult();
         return $user;
@@ -173,6 +227,23 @@ class UserModel extends Model {
         $this->query->queryGetAll('users');
         $users = $this->query->fetchResult();
         return $users;
+    }
+
+    function checkUserSchema() {
+        $result = false;
+        $nullUser = new UserModel();
+
+        if ($nullUser->checkDatabase()) {
+            if ($nullUser->checkUserTable()) {
+                $result = true;
+            } else {
+                $result = $nullUser->createUserTable();
+            }
+        } else {
+            $nullUser->createDatabase();
+        }
+        unset($nullUser);
+        return $result;
     }
 }
 ?>

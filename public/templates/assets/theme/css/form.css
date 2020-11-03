@@ -96,3 +96,9 @@
   border: 2px solid lightgray;
   border-radius: 10px;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/form\.scss}line{font-family:\0000388}}
+#editModal .modal-content {
+  background-color: #343a40;
+  color: white;
+}

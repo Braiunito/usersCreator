@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block head %}
-<script src="templates/assets/js/ajaxFormLoading.js"></script>
+<script src="/templates/assets/js/ajaxFormLoading.js"></script>
 {% endblock %}
 
 {% block content %}
 <div class="accessForm">
     {% if loginMsg %}
-    <div class="alert alert-{{loginMsg.type}}" role="alert">{{loginMsg.msg}}</div >
+    <div class="alert alert-{{loginMsg.type}}" role="alert">{{loginMsg.msg}}</div>
     {% endif %}
     <div id="access"></div>
 </div>

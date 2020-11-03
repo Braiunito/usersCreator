@@ -10,9 +10,7 @@ require_once('./libs/database/query.php');
 
             $dotenv = \Dotenv\Dotenv::createImmutable('../');
             $dotenv->load();
-            
-            $dotenv = \Dotenv\Dotenv::createImmutable('../');
-            $dotenv->load();        
+
             $host = $_ENV['DDBB_HOST']; 
             $username = $_ENV['DDBB_USER'];
             $passwd = $_ENV['DDBB_PASSWORD'];

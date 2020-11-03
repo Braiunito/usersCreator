@@ -13,17 +13,25 @@ class DeleteController extends Controller {
         $router->getCollector()->group(['before' => 'auth'], function($collector) {
         $router = $GLOBALS['router'];
             $router->getCollector()->{$this->method}($this->route, function () {
-                if (isset($_POST['delete'])) {
+                $success = false;
+                if (isset($_POST['id'])) {
                     $user = $_SESSION['user'];
-                    $id = isset($_POST['delete']) ? $_POST['delete'] : null;
-                    $result = $user->deleteUser($id);
-                    if ($result) {
-                        
-                    } else {
-                        echo "<h1 style='color: white'> Error! </h1>";
+                    $id = isset($_POST['id']) ? $_POST['id'] : null;
+                    if ($user->getUser()['id'] == $id) {
+                        unset($user);
+                        echo json_encode(array('success' => $success, 'msg' => 'You can\'t delete yourself.'));
+                        return false;
                     }
+                    $result = $user->deleteUserById($id);
+                    if ($result) {
+                        $success = true;
+                    } else {
+                        $success = false;
+                    }
+                    unset($user);
                 }
-                header("Location: {$_SERVER['HTTP_REFERER']}");
+                echo json_encode(array('success' => $success));
+                return false;
             });
         });
     }

@@ -11,6 +11,8 @@ use app\libs\database\database\Connect;
         function __construct() {
             $this->query = array();
             $this->result = array();
+            $dotenv = \Dotenv\Dotenv::createImmutable('../');
+            $dotenv->load();
         }
 
         private function queryGet($sql) {
@@ -43,9 +45,25 @@ use app\libs\database\database\Connect;
             $connection->close();
             return true;
         }
-
         function fetchResult() {
             return $this->result;
+        }
+
+        // ToDo check case with no database
+        function queryCheckDB() {
+            $database = $_ENV['DDBB_DATABASE'];
+            $sql = "CREATE DATABASE IF NOT EXISTS '{$database}';";
+            $result = $this->queryAlter($sql);
+            $result = ($result) ? true : false;
+            $this->result = $result;
+        }
+
+        function queryCheckTable($table) {
+            $database = $_ENV['DDBB_DATABASE'];
+            $sql = "SELECT * FROM information_schema.tables WHERE table_schema = '{$database}' AND table_name = '{$table}';";
+            $result = $this->queryGet($sql);
+            $result = ($result) ? true : false;
+            $this->result = $result;
         }
 
         function queryInsertRow($table, $columns, $values) {
@@ -62,6 +80,24 @@ use app\libs\database\database\Connect;
 
         function queryDeleteRow($table, $column, $value) {
             $sql = "DELETE FROM {$table} WHERE {$column}='{$value}';";
+            $result = $this->queryAlter($sql);
+            $this->result = $result;
+        }
+
+        /**
+         * Be careful to use update you need to pass
+         * Array $data.
+         * As an associative array where the key
+         * should be the column name to update
+         * and the value the value to update.
+         */
+        function queryUpdateRow($table, $data, $column, $search) {
+            $vals = array();
+            foreach ($data as $key => $value) {
+                array_push($vals, "$key = '{$value}'");
+            }
+            $vals = implode(', ', $vals);
+            $sql = "UPDATE {$table} SET {$vals} WHERE {$column}='{$search}';";
             $result = $this->queryAlter($sql);
             $this->result = $result;
         }
@@ -84,6 +120,11 @@ use app\libs\database\database\Connect;
             $sql = "SELECT * FROM {$table} where {$column} = '{$search}';";
             $result = $this->queryGet($sql);
             $result = ($result) ? $result[0] : false;
+            $this->result = $result;
+        }
+
+        function createTable($sql) {
+            $result = $this->queryAlter($sql);
             $this->result = $result;
         }
         

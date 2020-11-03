@@ -36,6 +36,8 @@ class RegisterController extends Controller {
         return false;
     }
 
+
+    // ToDo: Implement SendGrid email to send a confirmation mail after registration.
     function preRender($router) {
         $router->getCollector()->{$this->method}($this->route, function () {
             if (isset($_POST)) {
@@ -48,9 +50,10 @@ class RegisterController extends Controller {
                 $valid = $this->validateRegistrationForm($formData, $this->msg);
                 if ($valid) {
                     $result = $this->user->registerUser($formData);
-                    if ($result) {
+                    // Enable or disable this for auto-login after registration.
+                    /* if ($result) {
                         $_SESSION['user'] = $this->user;
-                    }
+                    } */
                     $this->msg = ($result) ? "Congratulations you are registered!" : "Sorry, something wents wrong in the registration.";
                     $this->type = ($result) ? "success" : "danger";
                     $this->loginMessage();

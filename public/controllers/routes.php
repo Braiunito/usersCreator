@@ -14,9 +14,12 @@ $router = new Router(null, null, null, '/home');
 $routes = Array(
     'Home' => new HomeController('GET', '/home', 'auth/home', 'Home'),
     
+
+    
     'Manage' => new ManageController('GET', '/home/manage', 'auth/manage', 'Manage'),
-    'Edit' => new EditController('GET', '/home/manage/edit', 'auth/edit', 'Edit'),
-    'Delete' => new DeleteController('POST', '/delete/user'),
+    //'ManagePager' => new ManagePagerController('POST', '/home/manage/pager'),
+    'Edit' => new EditController('POST', '/home/manage/edit/user', 'auth/edit', 'Edit'),
+    'Delete' => new DeleteController('POST', '/home/manage/delete/user'),
 
     'Access' => new AccessController('GET', '/user', 'access', 'User'),
     'Register' => new RegisterController('POST', '/register'),

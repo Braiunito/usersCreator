@@ -1,7 +1,10 @@
 name: makeusers
 recipe: lamp
 config:
-  webroot: public
+    webroot: public
+services:
+  appserver:
+    portforward: 3307
 tooling:
     require:
         service: appserver

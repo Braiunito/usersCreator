@@ -36,9 +36,21 @@ use app\libs\router\Router;
         function process($router) {
             if (isset($_SESSION['user'])) {
                 $user = $_SESSION['user'];
+                $username = $user->getUsername();
+                $userdata = $user->getUser();
+                // Custom array to not give the password in the array to twig.
+                $user = array(
+                    'id' => $userdata['id'],
+                    'firstname' => $userdata['firstname'],
+                    'lastname' => $userdata['lastname'],
+                    'username' => $username,
+                    'email' => $userdata['email'],
+                    'reg_date' => $userdata['reg_date']
+                );
                 $params = $this->getParams();
-                $params['name'] = $user->getUsername();
+                $params['user'] = $user;
                 $this->setParams($params);
+                unset($user);
             }
             $this->view->setTwig($router->getTwig());
             $this->preRender($router);

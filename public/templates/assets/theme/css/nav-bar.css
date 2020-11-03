@@ -1,33 +1,75 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\000033}}
-.nav-bar {
+.navbar {
+  color: white !important;
   box-shadow: -4px 5px 12px 0px #0a0a0a;
   position: sticky;
   z-index: 999;
   top: 0;
   width: 100vw;
   height: 60px;
-  background-color: #2b2e2f;
+  background-color: #2b2e2f !important;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\000035}}
-.nav-bar .icon span {
-  color: white;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\000038}}
-.nav-bar .icon img {
+.navbar img {
   width: 40px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000319}}
-.nav-bar a {
-  color: white;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\000039}}
+.navbar #navbarNav ul {
+  margin-left: auto !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000320}}
+.navbar li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000326}}
+.navbar a {
+  color: white !important;
   text-decoration: none;
-  padding: 0 10px;
+  padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000324}}
-.nav-bar .mainButton {
-  padding: 3px 15px;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000332}}
+.navbar .mainButton {
+  padding: 0;
+  margin: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000327}}
-.nav-bar a,
-.nav-bar .mainButton {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000336}}
+.navbar a,
+.navbar .mainButton {
   font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000342}}
+.navbar .mainButton {
+  margin-bottom: 0px;
+  margin-left: 15px;
+  width: 100px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000347}}
+.navbar .mainButton:hover {
+  color: white !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000350}}
+.navbar .navbar-brand {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000355}}
+.navbar .navbar-collapse.collapse.show,
+.navbar .navbar-collapse.collapsing {
+  background-color: #2b2e2f;
+  padding: 0 20px;
+  width: 100vw;
+  margin-left: -16px;
+  margin-right: -16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/nav-bar\.scss}line{font-family:\0000357}}
+.navbar .navbar-collapse.collapse.show .mainButton,
+.navbar .navbar-collapse.collapsing .mainButton {
+  margin-left: 0px;
+  margin-bottom: 15px;
 }

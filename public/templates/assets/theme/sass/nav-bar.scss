@@ -1,12 +1,13 @@
 @import '../sass/vars.scss';
 
-.nav-bar{
-    .icon {
-        span {
-            color: white;
-        }
-        img {
-            width: 40px;
+.navbar{
+    color: white !important;
+    img {
+        width: 40px;
+    }
+    #navbarNav {
+        ul {
+            margin-left: auto !important;
         }
     }
     box-shadow: -4px 5px 12px 0px #0a0a0a;
@@ -15,17 +16,53 @@
     top: 0;
     width: 100vw;
     height: 60px;
-    background-color: #2b2e2f;
+    background-color: #2b2e2f !important;
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0;
+    }
     a {
-        color: white;
+    
+        color: white !important;
         text-decoration: none;
-        padding: 0 10px;
+        padding: 0;
     }
     .mainButton {
-        padding: 3px 15px;
+        padding: 0;
+        margin: 0;
     }
     a,
     .mainButton {
         font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+    }
+    .mainButton {
+        margin-bottom: 0px;
+        margin-left: 15px;
+        width: 100px;
+    }
+    .mainButton:hover {
+        color: white !important;
+    }
+    .navbar-brand {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .navbar-collapse.collapse.show,
+    .navbar-collapse.collapsing {
+        .mainButton {
+            margin-left: 0px;
+            margin-bottom: 15px;
+        }
+        background-color: #2b2e2f;
+        padding: 0 20px;
+        width: 100vw;
+        margin-left: -16px;
+        margin-right: -16px;
     }
 }
+

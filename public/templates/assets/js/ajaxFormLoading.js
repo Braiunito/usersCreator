@@ -31,4 +31,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
     ajaxFirstOverload(loginPage);
     load();
+    
 });
