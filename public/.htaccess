@@ -1,4 +1,0 @@
-RewriteEngine On
-RewriteCond $1 !^(index\.php|templates|templates/assets|templates/assets/theme|templates/assets/theme/css|templates/assets/js|robots\.txt)
-#RewriteRule ^([^/]*)/([^/]*)$ index.php?url=$1&username=$2 [L]
-RewriteRule ^([^/]+)/? index.php?url=$1 [L,QSA]
