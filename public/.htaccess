@@ -1,4 +1,5 @@
 RewriteEngine On
+DirectoryIndex index.php index.html public/index.php public/index.html /public/index.php /public/index.html
 RewriteCond $1 !^(index\.php|templates|templates/assets|templates/assets/theme|templates/assets/theme/css|templates/assets/js|robots\.txt)
 #RewriteRule ^([^/]*)/([^/]*)$ index.php?url=$1&username=$2 [L]
 RewriteRule ^([^/]+)/? index.php?url=$1 [L,QSA]
