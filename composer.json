@@ -1,4 +1,9 @@
 {
+    "autoload": {
+        "psr-4": {
+            "app\\": "./public"
+        }
+    },
     "require": {
         "vlucas/phpdotenv": "^5.2",
         "twig/twig": "^3.1",
