@@ -1,5 +1,7 @@
 name: makeusers
 recipe: lamp
+env_file:
+  - .env
 config:
     webroot: public
 services:
