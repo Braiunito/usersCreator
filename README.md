@@ -14,7 +14,7 @@ Most of the time was spent on define and develop the main structure or MVC patte
 
 # Info:
 * If you want to work locally, this project runs with Lando, see [Lando quick instalation guide](https://docs.lando.dev/basics/installation.html#hello-world) for more info to bring it up!
-When you finally have lando, just tap ```lando start``` on your console at ```.lando.yml``` level and hack away!
+When you finally have lando, just copy the ```.env_example``` to ```.env``` and tap ```lando start``` on your console at ```.lando.yml``` level and hack away!
 * For more technical details, you will find other *README's* files at some other levels of the project to guide yourself in the editing way!
 
 # Summary:
@@ -33,6 +33,7 @@ When you finally have lando, just tap ```lando start``` on your console at ```.l
 * AWS management.
 * Heroku as PASS management.
 * Docker with Lando wrapper.
+* SSL Security.
 
 ### Libraries:
 * Bootstrap.
