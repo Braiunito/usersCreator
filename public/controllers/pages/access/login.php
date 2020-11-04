@@ -23,7 +23,7 @@ class LoginController extends Controller {
             if (isset($_POST)) {
                 $formData = array(
                     'email' => isset($_POST['email']) ? $_POST['email'] : null,
-                    'password' => isset($_POST['password']) ? $_POST['password'] : null
+                    'password' => isset($_POST['pass']) ? $_POST['pass'] : null
                 );
                 $valid = $this->user->validateForm($formData);
                 if ($valid) {

@@ -22,8 +22,11 @@ use \Twig\Environment;
         private $dispatcher;
 
         function __construct(Array $routes = null, Router $router = null, $response = null, $entryPoint = null) {
+            $dotenv = \Dotenv\Dotenv::createImmutable('../');
+            $dotenv->load();
+
             $this->loader = new FilesystemLoader('./templates/views');
-            $this->twig = new Environment($this->loader, ['debug' => true]);
+            $this->twig = new Environment($this->loader, ['debug' => boolval($_ENV["DEBUG"])]);
             $this->collector = new RouteCollector();
 
             $this->routes = !isset($routes) ? null : $routes;
@@ -35,13 +38,12 @@ use \Twig\Environment;
         }
 
         private function validate($url) {
-            $exist = true;
+            $exist = false;
             foreach ($this->getCanonicals() as $key => $value) {
                 if ($url == $value) {
                     $exist = true;
                 }
             }
-            //die(var_dump($this->getCanonicals(), $exist));
             $url = ($exist == true) ? $url : '/404';
             if ($_SERVER['REQUEST_URI'] == '/') {
                 header('Location: ' . $this->entryPoint);
@@ -93,12 +95,7 @@ use \Twig\Environment;
             foreach ($this->getRoutes() as $key => $value) {
                 $str = $this->getRoutes()[$key]->route;
                 $str2 = explode('{', $str);
-                if (isset($str2[1])) {
-                    $str2 = substr($str2[0], 0, -1);
-                    array_push($this->canonicals, $str2);
-                } else {
                     array_push($this->canonicals, $this->getRoutes()[$key]->route);
-                }
             }
         }
 

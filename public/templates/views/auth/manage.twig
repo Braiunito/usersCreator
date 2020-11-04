@@ -131,11 +131,14 @@
 <h1 class="pb-3">Welcome to manage section {{ user.username }}!</h1>
 <div class="d-none" role="alert" id="manageMsg"></div>
 
-<div class="manageContent">
-  <div class="addBtn">
-    <button type="button" class="btn btn-success add-button mb-3" data-user="{{ user.id }}" data-toggle="modal" data-target="#addModal">
-        <i class="fas fa-user-plus"></i>
-    </button>
+  <div class="manageContent">
+    <div class="topContent d-flex">
+      <div class="addBtn"> 
+        <button type="button" class="btn btn-success add-button mb-3" data-user="{{ user.id }}" data-toggle="modal" data-target="#addModal">
+            <i class="fas fa-user-plus"></i>
+        </button>
+      </div>
+      <input class="form-control search-bar ml-sm-2" type="search" placeholder="Search" aria-label="Search">
   </div>
   <div class="usersTable truncate">
   </div>

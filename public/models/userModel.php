@@ -191,7 +191,8 @@ class UserModel extends Model {
         if (!empty($data['email'])) {
             $result = $this->validateForm($data, true);
             if ($result === true) {
-                $result = $this->isRegistered($data['email']);
+                $result = !$this->isRegistered($data['email']);
+                //die(var_dump($result));
             }
         } else {
             $result = true;

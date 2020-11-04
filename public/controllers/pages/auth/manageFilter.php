@@ -25,14 +25,30 @@ class ManageFilterController extends Controller {
         return $data;
     }
 
-    function setUserInCounters($current) {
+    function setUserInCounters($current, $text = null) {
         $user = $_SESSION['user'];
         $users = $user->getAllUsers();
         $params = $this->getParams();
-        $data = $this->paginateUsers($users, $current);
+        if (!empty($text)) {
+            $newUsers = array();
+            foreach ($users as $pos => $user) {
+                foreach ($user as $key => $value) {
+                    if ($key != 'pass') {
+                    if (strpos(strtolower($value), strtolower($text)) !== false) {
+                    if (!in_array($user, $newUsers)) {
+                        array_push($newUsers, $user);
+                    }
+                    }
+                    }
+                }
+            }
+            $data['bounded'] = (!empty($newUsers)) ? $newUsers : $users;
+        } else {
+            $data = $this->paginateUsers($users, $current);
+            $params['counters']['amount'] = $data['counters'];
+            $params['counters']['current'] = $current;
+        }
         $params['users'] = $data['bounded'];
-        $params['counters']['amount'] = $data['counters'];
-        $params['counters']['current'] = $current;
         $this->setParams($params);
         unset($user);
     }
@@ -49,7 +65,12 @@ class ManageFilterController extends Controller {
                         $this->setUserInCounters($page);
                     } else {
                         $page = 0;
-                        $this->setUserInCounters($page);
+                        if (isset($_POST['text'])) {
+                            $text = $_POST['text'];
+                            $this->setUserInCounters($page, $text);
+                        } else {
+                            $this->setUserInCounters($page);
+                        }
                     }
                 }
                 $_SESSION['loginMsg'] = null;
