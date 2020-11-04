@@ -46,6 +46,7 @@ When you finally have lando, just copy the ```.env_example``` to ```.env``` and 
 * Refactor functions location to improve MVC pattern.
 * Refactor Js to have a main.js file and change procedural orientation to OOP.
 * Improve form validations and modals to perform UX.
+* Implement error managament in high risk functions.
 * Implement WebSockets to reload in real.
 * Finish the DB contingency functions.
 * Find bugs and kill them! Thanks for reading!
