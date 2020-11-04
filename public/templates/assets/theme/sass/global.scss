@@ -6,18 +6,20 @@
 @import '../sass/form.scss';
 @import '../sass/nav-bar.scss';
 @import '../sass/manage.scss';
+@import '../sass/mobile.scss';
 
 // General styles
 body {
     .content {
-        min-height: 74vh !important;
+        min-height: 100vh !important;
     }
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #171c21;
     .truncate {
-        overflow: scroll;
+        display: block;
+        overflow: scroll !important;
         max-width: 90vw;
     }
     h1 { 
@@ -37,16 +39,22 @@ body {
         a {
             color: white;
         }
-        bottom: 0;
         display: flex;
         justify-content: center;
         align-items: center;
         color: white;
         background-color: #212a35;
         border-radius: 20px 20px 0 0 ;
-        margin: 0 50px;
-        margin-top: 50px;
-        padding: 20px;
+        clear: both;
+        position: relative;
+        height: 100px;
+        margin-top: -100px;
+    }
+    #footer {
+        .footer {
+            margin: 0px 18px;
+            margin-top: 50px;
+        }
     }
     .notFound {
         height: 65%;

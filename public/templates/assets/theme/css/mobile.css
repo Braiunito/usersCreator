@@ -1,0 +1,55 @@
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/mobile\.scss}line{font-family:\000033}}
+  body .modal-body {
+    overflow: scroll;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/mobile\.scss}line{font-family:\000036}}
+  body .navbar-brand span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/mobile\.scss}line{font-family:\0000312}}
+  body .content {
+    padding-top: 0rem !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/mobile\.scss}line{font-family:\0000316}}
+  body h1 {
+    padding-top: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/mobile\.scss}line{font-family:\0000322}}
+  body .accessForm {
+    min-width: 320px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/mobile\.scss}line{font-family:\0000325}}
+  body .accessForm #mainForm .title {
+    min-width: 320px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/mobile\.scss}line{font-family:\0000326}}
+  body .accessForm #mainForm .title h4 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/mobile\.scss}line{font-family:\0000337}}
+  body #mainForm .formContent .nam {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/mobile\.scss}line{font-family:\0000339}}
+  body #mainForm .formContent .nam .firstname,
+  body #mainForm .formContent .nam .lastname {
+    width: 100%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/mobile\.scss}line{font-family:\0000343}}
+  body #mainForm .formContent .nam .lastname {
+    padding-top: 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/mobile\.scss}line{font-family:\0000353}}
+  body .manageContent .search-bar {
+    margin-left: 20px;
+  }
+}

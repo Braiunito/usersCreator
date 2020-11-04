@@ -1,0 +1,59 @@
+@media only screen and (max-width: 768px) {
+    body {
+        .modal-body {
+            overflow: scroll;
+        }
+        .navbar-brand span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
+        }
+        .content {
+            padding-top: 0rem!important;
+        }
+
+        h1 {
+            padding-top: 20px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .accessForm {
+            min-width: 320px;
+            #mainForm {
+                .title {
+                    h4 {
+                        font-size: 1.6rem;
+                        text-align: center;
+                    }
+                    min-width: 320px;
+                }
+            }
+        }
+
+        #mainForm {
+            .formContent {
+                .nam {
+                    width: 100%;
+                    .firstname,
+                    .lastname {
+                        width: 100%;
+                    }
+                    .lastname {
+                        padding-top: 20px;
+                    }
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .manageContent {
+            .search-bar {
+                margin-left: 20px;
+            }
+        }
+        
+    }
+}
