@@ -11,8 +11,6 @@ use app\libs\database\database\Connect;
         function __construct() {
             $this->query = array();
             $this->result = array();
-            $dotenv = \Dotenv\Dotenv::createImmutable('../');
-            $dotenv->load();
         }
 
         private function queryGet($sql) {
@@ -51,7 +49,7 @@ use app\libs\database\database\Connect;
 
         // ToDo check case with no database
         function queryCheckDB() {
-            $database = $_ENV['DDBB_DATABASE'];
+            $database = getenv('DDBB_DATABASE');
             $sql = "CREATE DATABASE IF NOT EXISTS '{$database}';";
             $result = $this->queryAlter($sql);
             $result = ($result) ? true : false;
@@ -59,7 +57,7 @@ use app\libs\database\database\Connect;
         }
 
         function queryCheckTable($table) {
-            $database = $_ENV['DDBB_DATABASE'];
+            $database = getenv('DDBB_DATABASE');
             $sql = "SELECT * FROM information_schema.tables WHERE table_schema = '{$database}' AND table_name = '{$table}';";
             $result = $this->queryGet($sql);
             $result = ($result) ? true : false;

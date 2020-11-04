@@ -22,11 +22,9 @@ use \Twig\Environment;
         private $dispatcher;
 
         function __construct(Array $routes = null, Router $router = null, $response = null, $entryPoint = null) {
-            $dotenv = \Dotenv\Dotenv::createImmutable('../');
-            $dotenv->load();
 
             $this->loader = new FilesystemLoader('./templates/views');
-            $this->twig = new Environment($this->loader, ['debug' => boolval($_ENV["DEBUG"])]);
+            $this->twig = new Environment($this->loader, ['debug' => boolval(getenv("DEBUG"))]);
             $this->collector = new RouteCollector();
 
             $this->routes = !isset($routes) ? null : $routes;
