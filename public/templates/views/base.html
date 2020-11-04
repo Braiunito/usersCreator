@@ -7,6 +7,7 @@
         {% block head %}
             <title>{% block title %}{% endblock %}{{title}} | Users Creator</title>
         {% endblock %}
+        <meta name="viewport" content="width=360, initial-scale=1">
     </head>
     <body>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
         
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/"><img src="/templates/assets/images/userIcon.png" alt="">{{ user.email }}</a>
+            <a class="navbar-brand" href="/"><img src="/templates/assets/images/userIcon.png" alt=""><span>{{ user.email }}</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
