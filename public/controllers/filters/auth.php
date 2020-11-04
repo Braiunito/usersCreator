@@ -13,7 +13,11 @@ class AuthFilterController extends Controller {
         $router->getCollector()->{$this->method}($this->route, function () {
             $isAlive = true;
             if(!isset($_SESSION['user'])) {
-                $_SESSION['loginMsg'] = array('msg' => 'Error, you need to be authenticated first.', 'type' => 'danger');
+                if (!isset($_SESSION['firstTime'])) {
+                    $_SESSION['firstTime'] = true;
+                } else {
+                    $_SESSION['loginMsg'] = array('msg' => 'Error, you need to be authenticated first.', 'type' => 'danger');
+                }
                 header('Location: /user');
                 return false;
             } else {
