@@ -39,7 +39,6 @@ When you finally have lando, just copy the ```.env_example``` to ```.env``` and 
 * Bootstrap.
 * Twig (template engine).
 * Phroute.
-* PhpDotenv.
 
 #### Backlog:
 * Change function comments to PHPDoc syntax.
