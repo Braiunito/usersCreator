@@ -56,18 +56,24 @@ body {
             margin-top: 50px;
         }
     }
+    .internalError,
     .notFound {
         height: 65%;
         display: flex;
         flex-direction: column;
         align-items: center;
         img {
-            background-color: white;
-            border-radius: 100%;
-            padding: 20px 45px;
+            max-width: 90vw;
         }
         * {
             margin-bottom: 50px;
+        }
+    }
+    .internalError {
+        img {
+            background-color: white;
+            border-radius: 100%;
+            padding: 20px 45px;
         }
     }
     .mainButton {

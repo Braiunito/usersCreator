@@ -305,23 +305,30 @@ body #footer .footer {
   margin-top: 50px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000359}}
+body .internalError,
 body .notFound {
   height: 65%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000365}}
+body .internalError img,
 body .notFound img {
-  background-color: white;
-  border-radius: 100%;
-  padding: 20px 45px;
+  max-width: 90vw;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000368}}
+body .internalError *,
 body .notFound * {
   margin-bottom: 50px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000373}}
+body .internalError img {
+  background-color: white;
+  border-radius: 100%;
+  padding: 20px 45px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000379}}
 body .mainButton {
   margin-top: 40px;
   padding: 5px 40px;
@@ -332,7 +339,7 @@ body .mainButton {
   border: 3px solid #c13f35;
   border-radius: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/braian\/Desktop\/Personal\/makeUsers\/public\/templates\/assets\/theme\/sass\/global\.scss}line{font-family:\0000389}}
 body .noSubmitButton {
   user-select: none;
   cursor: pointer;
